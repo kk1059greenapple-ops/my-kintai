@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+
+    <div class="clock-container animate-fade">
+        <div id="clock-time" class="clock-time">00:00:00</div>
+        <div id="clock-date" class="clock-date">2026年5月2日 (土)</div>
+    </div>
+
+    <!-- Employee View -->
+    <div id="employee-view" class="container animate-fade">
+        <header>
+            <h1>勤怠管理システム</h1>
+            <p class="subtitle">今日も一日頑張りましょう。</p>
+        </header>
+
+        <div id="employee-grid" class="employee-grid">
+            <!-- Employee cards will be injected here -->
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+            <button id="goto-admin" class="btn btn-out" style="max-width: 200px; margin: 0 auto;">社長管理ページへ</button>
+        </div>
+    </div>
+
+    <!-- Admin Login View -->
+    <div id="admin-login-view" class="container hidden animate-fade">
+        <div class="admin-login">
+            <h1>管理者ログイン</h1>
+            <p class="subtitle">パスワードを入力してください</p>
+            <input type="password" id="admin-password" class="input-field" placeholder="Password">
+            <button id="login-btn" class="btn btn-in">ログイン</button>
+            <button id="back-to-main-from-login" class="btn btn-out" style="margin-top: 1rem;">戻る</button>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard View -->
+    <div id="admin-dashboard-view" class="container hidden animate-fade" style="max-width: 1200px;">
+        <nav class="admin-nav">
+            <h1>社長管理パネル</h1>
+            <button id="logout-btn" class="btn btn-out" style="max-width: 120px;">ログアウト</button>
+        </nav>
+
+        <section style="margin-bottom: 3rem;">
+            <h2>従業員管理</h2>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <input type="text" id="new-employee-name" class="input-field" placeholder="従業員名を入力" style="margin-bottom: 0;">
+                <button id="add-employee-btn" class="btn btn-in" style="max-width: 150px;">新規追加</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>今月の勤務状況</h2>
+            <div style="overflow-x: auto;">
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th>名前</th>
+                            <th>現在の状態</th>
+                            <th>今月の出勤日数</th>
+                            <th>最終打刻</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-report-body">
+                        <!-- Report rows will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
