@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Attendance System</title>
+    <title>Premium Attendance System v2</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +45,10 @@
     <div id="admin-dashboard-view" class="container hidden animate-fade" style="max-width: 1200px;">
         <nav class="admin-nav">
             <h1>社長管理パネル</h1>
-            <button id="logout-btn" class="btn btn-out" style="max-width: 120px;">ログアウト</button>
+            <div style="display: flex; gap: 0.5rem;">
+                <button id="force-refresh-btn" class="btn btn-in" style="max-width: 100px; font-size: 0.7rem; padding: 0.5rem;">リスト更新</button>
+                <button id="logout-btn" class="btn btn-out" style="max-width: 100px; font-size: 0.7rem; padding: 0.5rem;">ログアウト</button>
+            </div>
         </nav>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
@@ -115,6 +118,7 @@
         </section>
     </div>
 
-    <script src="app.js"></script>
+    <!-- キャッシュ対策でファイル名にバージョンを付ける -->
+    <script src="app.js?v=2026050301"></script>
 </body>
 </html>
