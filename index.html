@@ -55,13 +55,25 @@
             <button id="logout-btn" class="btn btn-out" style="max-width: 120px;">ログアウト</button>
         </nav>
 
-        <section style="margin-bottom: 3rem;">
-            <h2>従業員管理</h2>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                <input type="text" id="new-employee-name" class="input-field" placeholder="従業員名を入力" style="margin-bottom: 0;">
-                <button id="add-employee-btn" class="btn btn-in" style="max-width: 150px;">新規追加</button>
-            </div>
-        </section>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+            <!-- Employee Add Section -->
+            <section>
+                <h2>従業員の新規追加</h2>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <input type="text" id="new-employee-name" class="input-field" placeholder="名前を入力" style="margin-bottom: 0;">
+                    <button id="add-employee-btn" class="btn btn-in" style="max-width: 120px;">追加</button>
+                </div>
+            </section>
+
+            <!-- Password Change Section -->
+            <section>
+                <h2>管理パスワードの変更</h2>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <input type="password" id="new-admin-password" class="input-field" placeholder="新しいパスワード" style="margin-bottom: 0;">
+                    <button id="change-pw-btn" class="btn btn-out" style="max-width: 120px;">変更</button>
+                </div>
+            </section>
+        </div>
 
         <section>
             <h2>今月の勤務状況</h2>
